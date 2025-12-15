@@ -9,6 +9,7 @@ import RewindScreen5 from "../screens/RewindScreen5";
 import RewindScreen6 from "../screens/RewindScreen6";
 import RewindScreen7 from "../screens/RewindScreen7";
 import RewindScreen8 from "../screens/RewindScreen8";
+import RewindScreen9 from "../screens/RewindScreen9";
 
 const REWIND_CONTENT_SCREENS = 13;
 const MIN_SWIPE_DISTANCE = 50;
@@ -80,7 +81,7 @@ const REWIND_SCREENS = [
     totalPages: 13,
   },
   {
-    component: RewindScreen,
+    component: RewindScreen9,
     type: "generic",
     screenNumber: 9,
     showPagination: true,

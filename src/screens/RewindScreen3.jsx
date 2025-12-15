@@ -38,25 +38,7 @@ const RewindScreen3 = ({ pageNumber, totalPages }) => {
             </div>
           </div>
         </div>
-        {/* Page Indicator */}
-        <div className="page-indicator">
-          <div className="indicator-oval">
-            <span>
-              {pageNumber}/{totalPages}
-            </span>
-          </div>
-          <div className="indicator-chevron">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M7 10L12 15L17 10"
-                stroke="#FFFFFF"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
+
         {/* Page Indicator */}
         <div className="page-indicator">
           <div className="indicator-oval">
