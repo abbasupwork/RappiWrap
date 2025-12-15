@@ -1,9 +1,9 @@
 import { useNavigate, useLocation } from "react-router-dom";
 
-import inicioIcon from "../assets/images/inicio.png";
-import ofertasIcon from "../assets/images/ofertas.png";
-import favoritosIcon from "../assets/images/favoritos.png";
-import cuentaIcon from "../assets/images/cuenta.png";
+import inicioIcon from "../assets/images/Inicio.png";
+import ofertasIcon from "../assets/images/Ofertas.png";
+import favoritosIcon from "../assets/images/Favoritos.png";
+import cuentaIcon from "../assets/images/Cuenta.png";
 
 const BottomNavigation = ({ activeTab }) => {
   const navigate = useNavigate();
