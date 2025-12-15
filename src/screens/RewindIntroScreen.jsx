@@ -1,11 +1,10 @@
 import rappiLogo from "../assets/images/rappiLogo.png";
 import rewindTitle from "../assets/images/rewindTitle.png";
-import whiteFlower from "../assets/images/whiteFlower.png";
-import redFlower from "../assets/images/redFlower.png";
 import pill from "../assets/images/pill.png";
 import arrows from "../assets/images/arrows.svg";
 import Lottie from "lottie-react";
 import WhiteFlower from "../assets/lotties/FLOWER_01.json";
+import RedFlower from "../assets/lotties/FLOWER_02.json";
 
 const RewindIntroScreen = () => {
   return (
@@ -24,14 +23,21 @@ const RewindIntroScreen = () => {
             <img
               src={rewindTitle}
               alt="Rewind Title"
-              className="rewind-title"
+              className="rewind-title mb-[-20px]"
             />
             <div className="flex items-center justify-between w-full relative">
-              <img src={redFlower} alt="" className="relative left-[-10px]" />
-              <div className="flex items-center justify-end relative right-[-65px]">
-                <img src={whiteFlower} alt="" className="whiteFlower" />
-                <Lottie animationData={WhiteFlower} loop={true} />
-                <img className="relative left-[-57px]" src={pill} alt="" />
+              <Lottie
+                className="w-[64px] ml-[-10px]"
+                animationData={RedFlower}
+                loop={true}
+              />
+              <div className="flex items-center justify-end">
+                <Lottie
+                  className="w-[100px] mr-[-55px]"
+                  animationData={WhiteFlower}
+                  loop={true}
+                />
+                <img src={pill} className="z-10" alt="" />
               </div>
             </div>
           </div>

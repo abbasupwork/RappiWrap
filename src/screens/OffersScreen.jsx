@@ -1,7 +1,11 @@
-import React from "react";
+import BottomNavigation from "../components/BottomNavigation";
 
 const OfferScreen = () => {
-  return <div>OfferScreen</div>;
+  return (
+    <div>
+      <BottomNavigation activeTab="ofertas" />
+    </div>
+  );
 };
 
 export default OfferScreen;
