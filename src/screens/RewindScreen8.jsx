@@ -1,6 +1,6 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.png";
-import Turbo from "../assets/images/turbo.png";
+import Turbo from "../assets/images/Turbo.png";
 import Scott from "../assets/images/scott.png";
 import FlagLeft from "../assets/images/flag-left.png";
 import FlagRight from "../assets/images/flag-right.png";
