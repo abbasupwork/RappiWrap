@@ -48,8 +48,8 @@ const HomeScreen = () => {
             <div className="flex gap-2">
               <div className="flex-1 bg-[#F7F8F9] rounded-[20px] p-2 flex items-center justify-between cursor-pointer">
                 <div className="flex items-center">
-                  <img src={RappiCard} alt="" />
-                  <span className="text-lg font-medium text-black font-golos">
+                  <img className="ml-[-5px] mr-[-5px]" src={RappiCard} alt="" />
+                  <span className="text-regular font-medium text-black font-golos">
                     RappiCard
                   </span>
                 </div>
@@ -57,8 +57,12 @@ const HomeScreen = () => {
               </div>
               <div className="flex-1 bg-[#F7F8F9] rounded-[20px] p-2 flex items-center justify-between cursor-pointer">
                 <div className="flex items-center">
-                  <img src={RappiCuenta} alt="" />
-                  <span className="text-lg font-medium text-black font-golos">
+                  <img
+                    className="ml-[-5px] mr-[-5px]"
+                    src={RappiCuenta}
+                    alt=""
+                  />
+                  <span className="text-regular font-medium text-black font-golos">
                     RappiCard
                   </span>
                 </div>

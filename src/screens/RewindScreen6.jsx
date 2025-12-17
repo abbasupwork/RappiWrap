@@ -1,16 +1,16 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
+import moustache from "../assets/images/moustache.svg";
 import TimerTag from "../assets/images/timer-tag.png";
-import HeartIcon from "../assets/images/heart-icon.png";
+import HeartIcon from "../assets/images/heart-icon.svg";
 
 const RewindScreen5 = ({ pageNumber, totalPages }) => {
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-3 pt-8">
+      <BaseRewindScreen className="rewind-screen-6 pt-8">
         <div className="w-full">
           <div className="px-6 mb-10">
             <img src={moustache} alt="" className="mb-5 mx-auto" />
-            <h2 className="font-bold leading-[52px] text-black mb-6">
+            <h2 className="font-bold text-[50px] leading-[52px] text-black mb-6">
               Ahorraste
             </h2>
             <img src={TimerTag} alt="" className="mb-4" />

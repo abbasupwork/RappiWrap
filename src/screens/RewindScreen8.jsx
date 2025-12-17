@@ -1,6 +1,6 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
-import Turbo from "../assets/images/Turbo.png";
+import moustache from "../assets/images/moustache.svg";
+import Turbo from "../assets/images/turbo.svg";
 import Scott from "../assets/images/scott.png";
 import FlagLeft from "../assets/images/flag-left.png";
 import FlagRight from "../assets/images/flag-right.png";
@@ -8,18 +8,18 @@ import FlagRight from "../assets/images/flag-right.png";
 const RewindScreen5 = ({ pageNumber, totalPages }) => {
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-3">
+      <BaseRewindScreen className="rewind-screen-8">
         <div className="w-full">
           <div className="relative bg-[#69bd68] bg-[url('./assets/images/green-lines.png')] bg-top bg-cover bg-no-repeat w-full px-6 pt-8 text-white">
             <div className="relative flex flex-col items-center">
               <img src={moustache} alt="" className="mb-2 mx-auto" />
-              <h1 className="text-[118px] text-center font-bold leading-[132px] mb-4">
+              <h1 className="text-[100px] text-center font-bold leading-[100px] mb-4">
                 05:12
               </h1>
-              <p className="text-[#083410] text-[24px] leading-[20px] font-semibold mb-8">
-                Fue el récord de entrega con
+              <p className="text-[#083410] text-center text-[24px] leading-[20px] font-semibold mb-4">
+                Tu pedido más rápido de
               </p>
-              <img src={Turbo} alt="" className="mb-6" />
+              <img src={Turbo} alt="" className="mb-4" />
               <div className="glass-card rounded-[24px] p-4 w-full flex items-center gap-4 mb-[-30px]">
                 <img src={Scott} alt="" />
                 <div>
@@ -31,7 +31,7 @@ const RewindScreen5 = ({ pageNumber, totalPages }) => {
               </div>
             </div>
           </div>
-          <div className="mt-20 mb-6 px-6 w-full">
+          <div className="mt-16 mb-4 px-6 w-full">
             <p className="text-[22px] leading-[24px] mb-4">
               El récord de entrega en Chapinero es una Coca Cola 2L que llegó
               en:

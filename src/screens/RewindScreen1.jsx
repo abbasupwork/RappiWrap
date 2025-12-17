@@ -1,22 +1,22 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
-import rappiLogo from "../assets/images/logo-01.png";
+import moustache from "../assets/images/moustache.svg";
+import rappiLogo from "../assets/images/rappi-logo.svg";
 import Lottie from "lottie-react";
 import Dominos from "../assets/lotties/DOMINO.json";
 
 const RewindScreen1 = ({ pageNumber, totalPages }) => {
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-1 py-8">
+      <BaseRewindScreen className="rewind-screen-1 pt-5">
         <div className="w-full px-6">
-          <img src={moustache} alt="" className="mb-5 mx-auto" />
+          <img src={moustache} alt="" className="mb-4 mx-auto" />
           <h2
-            className="font-golos font-bold text-[78px] leading-[70px] bg-gradient-to-r from-[#FF7E42] via-[#FF2827] to-[#FF3A64]
+            className="font-golos font-bold text-[64px] leading-[60px] bg-gradient-to-r from-[#FF7E42] via-[#FF2827] to-[#FF3A64]
   bg-clip-text text-transparent mb-4"
           >
             El efecto
           </h2>
-          <span className="font-golos text-[42px] leading-[40px] font-bold">
+          <span className="font-golos text-[32px] leading-[32px] font-bold">
             “María Camila”
           </span>
           <div className="flex items-center mt-4">

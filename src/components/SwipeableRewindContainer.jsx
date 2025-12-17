@@ -10,6 +10,10 @@ import RewindScreen6 from "../screens/RewindScreen6";
 import RewindScreen7 from "../screens/RewindScreen7";
 import RewindScreen8 from "../screens/RewindScreen8";
 import RewindScreen9 from "../screens/RewindScreen9";
+import RewindScreen10 from "../screens/RewindScreen10";
+import RewindScreen11 from "../screens/RewindScreen11";
+import RewindScreen12 from "../screens/RewindScreen12";
+import RewindScreen13 from "../screens/RewindScreen13";
 
 const REWIND_CONTENT_SCREENS = 13;
 const MIN_SWIPE_DISTANCE = 50;
@@ -89,7 +93,7 @@ const REWIND_SCREENS = [
     totalPages: 13,
   },
   {
-    component: RewindScreen,
+    component: RewindScreen10,
     type: "generic",
     screenNumber: 10,
     showPagination: true,
@@ -97,7 +101,7 @@ const REWIND_SCREENS = [
     totalPages: 13,
   },
   {
-    component: RewindScreen,
+    component: RewindScreen11,
     type: "generic",
     screenNumber: 11,
     showPagination: true,
@@ -105,7 +109,7 @@ const REWIND_SCREENS = [
     totalPages: 13,
   },
   {
-    component: RewindScreen,
+    component: RewindScreen12,
     type: "generic",
     screenNumber: 12,
     showPagination: true,
@@ -113,7 +117,7 @@ const REWIND_SCREENS = [
     totalPages: 13,
   },
   {
-    component: RewindScreen,
+    component: RewindScreen13,
     type: "generic",
     screenNumber: 13,
     showPagination: true,

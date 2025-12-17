@@ -1,4 +1,4 @@
-import rappiLogo from "../assets/images/rappiLogo.png";
+import rappiLogo from "../assets/images/rappiLogo.svg";
 import rewindTitle from "../assets/images/rewindTitle.png";
 import pill from "../assets/images/pill.png";
 import arrows from "../assets/images/arrows.svg";

@@ -1,5 +1,5 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
+import moustache from "../assets/images/moustache.svg";
 import Lottie from "lottie-react";
 import Leaves from "../assets/lotties/LEAVES.json";
 import World from "../assets/lotties/WORLD.json";
@@ -7,10 +7,12 @@ import World from "../assets/lotties/WORLD.json";
 const RewindScreen5 = ({ pageNumber, totalPages }) => {
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-3">
-        <div className="w-full pt-8 px-6 h-full">
-          <img src={moustache} alt="" className="mb-10 mx-auto" />
-          <h2 className="font-bold leading-[52px] text-[#34CE1C]">Ahorraste</h2>
+      <BaseRewindScreen className="rewind-screen-9">
+        <div className="w-full pt-5 px-6 h-full">
+          <img src={moustache} alt="" className="mb-6 mx-auto" />
+          <h2 className="font-bold text-[54px] leading-[52px] text-[#34CE1C]">
+            Ahorraste
+          </h2>
           <div className="flex items-end gap-2 mb-4">
             <span className="text-[124px] text-[#34CE1C] font-bold leading-[112px]">
               200

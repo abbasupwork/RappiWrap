@@ -1,5 +1,5 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
+import moustache from "../assets/images/moustache.svg";
 import ImageCarousel from "../components/ImageCarousel";
 import Coffee from "../assets/images/coffee.png";
 import Nachos from "../assets/images/nachos.png";
@@ -16,17 +16,17 @@ const RewindScreen4 = ({ pageNumber, totalPages }) => {
   ];
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-3 py-8">
+      <BaseRewindScreen className="rewind-screen-4 py-5">
         <div className="w-full">
-          <div className="px-6 mb-10">
+          <div className="px-6 mb-5">
             <img src={moustache} alt="" className="mb-5 mx-auto" />
             <h3 className="font-bold text-[38px] leading-[32px] text-black mb-10">
               Este año<br></br>agregamos
             </h3>
-            <h1 className="text-[96px] leading-[74px] font-bold bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2">
+            <h1 className="text-[80px] leading-[74px] font-bold bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2">
               cientos
             </h1>
-            <h2 className="font-bold leading-[48px] bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2">
+            <h2 className="font-bold text-[50px] leading-[48px] bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2">
               de nuevos restaurantes<br></br>
               <span className="text-black">en tu ciudad</span>
             </h2>

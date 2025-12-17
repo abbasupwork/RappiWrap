@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import PromoImage from "../assets/images/promo-image.png";
+import PromoImage from "../assets/images/rewind.png";
 
 const PromotionalBanner = () => {
   const navigate = useNavigate();
@@ -10,8 +10,8 @@ const PromotionalBanner = () => {
   return (
     <>
       <div className="flex items-start mb-8">
-        <img src={PromoImage} alt="" />
-        <div className="w-full">
+        <img className="w-1/2" src={PromoImage} alt="" />
+        <div className="w-1/2">
           <p className="font-medium text-lg leading-[20px] mb-4">
             Este fue tu
             <span className="text-[24px] bg-gradient-to-br from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent">

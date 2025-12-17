@@ -1,20 +1,20 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
-import moustache from "../assets/images/moustache.png";
-import BurgerImage from "../assets/images/burgerImage.png";
+import moustache from "../assets/images/moustache.svg";
+import BurgerImage from "../assets/images/burger-imagex2.png";
 import Basket from "../assets/images/basket-icon.png";
 
 const RewindScreen5 = ({ pageNumber, totalPages }) => {
   return (
     <>
-      <BaseRewindScreen className="rewind-screen-3">
+      <BaseRewindScreen className="rewind-screen-5">
         <div className="w-full">
-          <div className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] w-full px-6 pt-8 pb-15 text-white">
-            <img src={moustache} alt="" className="mb-5 mx-auto" />
-            <h3 className="text-[38px] font-bold leading-[33px] mb-4">
+          <div className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] w-full px-6 pt-5 pb-10 text-white">
+            <img src={moustache} alt="" className="mb-4 mx-auto" />
+            <h3 className="text-[38px] font-bold leading-[33px] mb-2">
               La Hamburguesería
             </h3>
-            <p className="text-xl mb-8">fue donde más pediste este año.</p>
-            <img src={BurgerImage} alt="" className="mx-auto mb-4" />
+            <p className="text-xl mb-5">fue donde más pediste este año.</p>
+            <img src={BurgerImage} alt="" className="mx-auto mb-2 w-[220px]" />
             <p className="text-xl font-semibold text-center">
               Burger clásica<br></br>triple
             </p>
@@ -28,7 +28,11 @@ const RewindScreen5 = ({ pageNumber, totalPages }) => {
                 <p className="text-regular w-[100px]">
                   Pedidos promedio por usuario aquí
                 </p>
-                <img src={Basket} alt="" className="ml-auto" />
+                <img
+                  src={Basket}
+                  alt=""
+                  className="ml-auto mr-[-10px] mb-[-10px]"
+                />
               </div>
               <div className="glass-card p-4 rounded-[34px]">
                 <span className="text-[48px] font-bold [text-stroke:1px_white]">
@@ -36,7 +40,7 @@ const RewindScreen5 = ({ pageNumber, totalPages }) => {
                 </span>
                 <p className="text-regular mb-6">Tus pedidos aquí</p>
                 <div className="bg-[#FF4D2E] p-2 text-white flex flex-col items-center rounded-full mb-2">
-                  <span className="text-center text-[24px] font-semibold">
+                  <span className="text-center text-[24px] leading-[24px] font-semibold">
                     Top 50%
                   </span>
                 </div>
