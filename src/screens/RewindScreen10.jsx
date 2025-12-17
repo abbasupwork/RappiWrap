@@ -1,6 +1,6 @@
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
-import Top12 from "../assets/images/Top12.png";
+import Top12 from "../assets/images/top12.png";
 
 const RewindScreen5 = ({ pageNumber, totalPages }) => {
   return (
