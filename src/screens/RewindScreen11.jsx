@@ -1,20 +1,28 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import ProBlack from "../assets/images/pro-black.svg";
 import DollarIcon from "../assets/images/dollar-icon.svg";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-3">
         <div className="bg-gradient-to-br from-[#3C3C3C] to-[#000000] py-5 px-6 w-full h-full flex flex-col items-center">
-          <img src={moustache} alt="" className="mb-4 mx-auto" />
-          <img className="w-[200px] mb-5" src={ProBlack} alt="" />
-          <p className="text-xl text-white mb-5">Ahorraste en total</p>
-          <span className="bg-gradient-to-br from-[#FFC87C] to-[#F49502] bg-clip-text text-transparent text-[60px] font-bold mb-4">
+          <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-4 mx-auto animate-fade-in-1" />
+          <img key={`pro-${animationKey}`} className="w-[200px] mb-5 animate-fade-in-2" src={ProBlack} alt="" />
+          <p key={`text-${animationKey}`} className="text-xl text-white mb-5 animate-fade-in-3">Ahorraste en total</p>
+          <span key={`amount-${animationKey}`} className="bg-gradient-to-br from-[#FFC87C] to-[#F49502] bg-clip-text text-transparent text-[60px] font-bold mb-4 animate-fade-in-4">
             $287.000
           </span>
-          <div
+          <div key={`card-${animationKey}`}
             className="bg-white/5
                         backdrop-blur-[30px]
                         border border-white/20

@@ -1,28 +1,36 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import TimerTag from "../assets/images/timer-tag.png";
 import HeartIcon from "../assets/images/heart-icon.svg";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-6 pt-8">
         <div className="w-full">
           <div className="px-6 mb-10">
-            <img src={moustache} alt="" className="mb-5 mx-auto" />
-            <h2 className="font-bold text-[50px] leading-[52px] text-black mb-6">
+            <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-5 mx-auto animate-fade-in-1" />
+            <h2 key={`title-${animationKey}`} className="font-bold text-[50px] leading-[52px] text-black mb-6 animate-fade-in-2">
               Ahorraste
             </h2>
-            <img src={TimerTag} alt="" className="mb-4" />
-            <p className="text-[30px] leading-[30px] mb-6">
+            <img key={`timer-${animationKey}`} src={TimerTag} alt="" className="mb-4 animate-fade-in-3" />
+            <p key={`text1-${animationKey}`} className="text-[30px] leading-[30px] mb-6 animate-fade-in-4">
               de filas y búsqueda de parqueaderos.
             </p>
-            <p className="text-xl leading-[20px]">
+            <p key={`text2-${animationKey}`} className="text-xl leading-[20px] animate-fade-in-5">
               Más tiempo que el promedio de{" "}
               <span className="font-bold">45 horas.</span>
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] px-6 py-10 w-full h-full">
+          <div key={`card-${animationKey}`} className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] px-6 py-10 w-full h-full animate-fade-in-6">
             <div className="rounded-[24px] px-6 pb-8 shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] glass-card2 text-white text-center">
               <img src={HeartIcon} alt="" className="mx-auto" />
               <p className="text-xl leading-[20px] mb-4">

@@ -1,21 +1,29 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import Calender from "../assets/images/calender.png";
 
-const RewindScreen2 = ({ pageNumber, totalPages }) => {
+const RewindScreen2 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-2 py-5">
         <div className="w-full px-6">
-          <img src={moustache} alt="" className="mb-5 mx-auto" />
-          <h2 className="font-golos font-bold text-[50px] leading-[52px] text-black">
+          <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-5 mx-auto animate-fade-in-1" />
+          <h2 key={`title-${animationKey}`} className="font-golos font-bold text-[50px] leading-[52px] text-black animate-fade-in-2">
             Tu primer pedido fue en
           </h2>
-          <div className="flex items-end mb-4">
+          <div key={`date-${animationKey}`} className="flex items-end mb-4 animate-fade-in-3">
             <img className="w-[80px]" src={Calender} alt="" />
             <span className="font-golos font-bold text-[70px]">2018</span>
           </div>
-          <div className="pattern-card px-6 py-4 text-white">
+          <div key={`card-${animationKey}`} className="pattern-card px-6 py-4 text-white animate-fade-in-4">
             <h2 className="text-[42px] font-bold mb-4">
               7 años <span className="text-[28px] font-normal">después</span>
             </h2>
@@ -31,7 +39,7 @@ const RewindScreen2 = ({ pageNumber, totalPages }) => {
               sueño.
             </p>
           </div>
-          <div className="glass-card p-4 rounded-full w-[90%] mx-auto relative top-[-20px] flex flex-col items-center">
+          <div key={`glass-${animationKey}`} className="glass-card p-4 rounded-full w-[90%] mx-auto relative top-[-20px] flex flex-col items-center animate-fade-in-5">
             <span className="font-medium text-lg text-center w-full">
               Tu efecto es real. Y es medible.
             </span>

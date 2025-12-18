@@ -1,28 +1,36 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import Top12 from "../assets/images/top12.png";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-3 py-5 px-6">
         <div className="">
-          <img src={moustache} alt="" className="mb-4 mx-auto" />
-          <h2 className="font-bold text-[52px] leading-[52px] mb-4">
+          <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-4 mx-auto animate-fade-in-1" />
+          <h2 key={`title-${animationKey}`} className="font-bold text-[52px] leading-[52px] mb-4 animate-fade-in-2">
             Tu propina este año
           </h2>
-          <div className="glass-card p-4 rounded-[24px] flex flex-col items-center justify-center mb-5">
+          <div key={`card-${animationKey}`} className="glass-card p-4 rounded-[24px] flex flex-col items-center justify-center mb-5 animate-fade-in-3">
             <h3 className="text-[34px] leading-[34px] font-semibold">$2.500</h3>
             <p className="text-regular">Fue tu propina promedio</p>
           </div>
-          <h4 className="text-[24px] leading-[30px] text-[#00AE88] mb-4">
+          <h4 key={`subtitle-${animationKey}`} className="text-[24px] leading-[30px] text-[#00AE88] mb-4 animate-fade-in-4">
             Estás en el:
           </h4>
-          <img className="w-[300px] mb-4" src={Top12} alt="" />
-          <p className="text-[24px] leading-[30px] text-[#00AE88] mb-5">
+          <img key={`top12-${animationKey}`} className="w-[300px] mb-4 animate-fade-in-5" src={Top12} alt="" />
+          <p key={`text1-${animationKey}`} className="text-[24px] leading-[30px] text-[#00AE88] mb-5 animate-fade-in-6">
             de propinas en Bogotá.
           </p>
-          <p className="text-xl">
+          <p key={`text2-${animationKey}`} className="text-xl">
             El 100% de tu propina va a los repartidores, ayudándolos a cumplir
             sus metas y sueños.{" "}
           </p>

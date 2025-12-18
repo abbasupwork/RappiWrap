@@ -1,25 +1,33 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import BurgerImage from "../assets/images/burger-imagex2.png";
 import Basket from "../assets/images/basket-icon.png";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-5">
         <div className="w-full">
           <div className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] w-full px-6 pt-5 pb-10 text-white">
-            <img src={moustache} alt="" className="mb-4 mx-auto" />
-            <h3 className="text-[38px] font-bold leading-[33px] mb-2">
+            <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-4 mx-auto animate-fade-in-1" />
+            <h3 key={`title-${animationKey}`} className="text-[38px] font-bold leading-[33px] mb-2 animate-fade-in-2">
               La Hamburguesería
             </h3>
-            <p className="text-xl mb-5">fue donde más pediste este año.</p>
-            <img src={BurgerImage} alt="" className="mx-auto mb-2 w-[220px]" />
-            <p className="text-xl font-semibold text-center">
+            <p key={`subtitle-${animationKey}`} className="text-xl mb-5 animate-fade-in-3">fue donde más pediste este año.</p>
+            <img key={`burger-${animationKey}`} src={BurgerImage} alt="" className="mx-auto mb-2 w-[220px] animate-fade-in-4" />
+            <p key={`burger-text-${animationKey}`} className="text-xl font-semibold text-center animate-fade-in-5">
               Burger clásica<br></br>triple
             </p>
           </div>
-          <div className="relative top-[-30px] mx-6">
+          <div key={`stats-${animationKey}`} className="relative top-[-30px] mx-6 animate-fade-in-6">
             <div className="grid grid-cols-2 gap-6">
               <div className="glass-card p-4 rounded-[34px]">
                 <span className="text-[48px] font-bold [text-stroke:1px_white]">

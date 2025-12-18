@@ -1,16 +1,24 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import Mute from "../assets/images/mute.svg";
 import Resume from "../assets/images/resume.svg";
 import Coupon from "../assets/images/coupon-mini.svg";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-3">
         <div className="pt-5 px-6 w-full h-[256px] bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583]">
-          <img src={moustache} alt="" className="mb-4 mx-auto" />
-          <div className="bg-[url('./assets/images/FOTO.jpg')] bg-center bg-cover bg-no-repeat w-full h-[300px] rounded-[32px] p-5">
+          <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-4 mx-auto animate-fade-in-1" />
+          <div key={`photo-${animationKey}`} className="bg-[url('./assets/images/FOTO.jpg')] bg-center bg-cover bg-no-repeat w-full h-[300px] rounded-[32px] p-5 animate-fade-in-2">
             <div className="flex justify-between items-end h-full">
               <img
                 className="bg-white/5
@@ -33,7 +41,7 @@ const RewindScreen5 = ({ pageNumber, totalPages }) => {
             </div>
           </div>
         </div>
-        <div className="px-6 pt-[130px]">
+        <div key={`content-${animationKey}`} className="px-6 pt-[130px] animate-fade-in-3">
           <p className="text-xl font-semibold">No eres solo un usuario</p>
           <h3 className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] bg-clip-text text-transparent font-bold text-[42px] leading-[42px] mb-2">
             eres el efecto que mueve a Rappi.

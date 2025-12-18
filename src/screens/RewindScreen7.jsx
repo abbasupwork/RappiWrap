@@ -1,19 +1,27 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import GirlImage from "../assets/images/girl-image.svg";
 import ArrowUp from "../assets/images/arrow-up.png";
 
-const RewindScreen5 = ({ pageNumber, totalPages }) => {
+const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-7 py-5">
         <div className="w-full">
           <div className="flex items-start justify-between pl-6">
-            <img src={moustache} alt="" />
-            <img className="h-[250px]" src={GirlImage} alt="" />
+            <img key={`moustache-${animationKey}`} src={moustache} alt="" className="animate-fade-in-1" />
+            <img key={`girl-${animationKey}`} className="h-[250px] animate-fade-in-2" src={GirlImage} alt="" />
           </div>
           <div className="px-6">
-            <div className="flex flex-col items-start">
+            <div key={`content-${animationKey}`} className="flex flex-col items-start animate-fade-in-3">
               <h4 className="text-[24px] font-semibold">En 2025 fuiste una</h4>
               <h2 className="text-[#0C4E87] font-bold text-[50px] leading-[50px] mb-4">
                 Noctámbula resolutiva
@@ -36,7 +44,7 @@ const RewindScreen5 = ({ pageNumber, totalPages }) => {
               <p className="text-xl font-semibold">25 pedidos</p>
               <p className="text-xl">los hiciste después de las 10pm</p>
             </div>
-            <div className="grid grid-cols-2 gap-4 mt-6">
+            <div key={`stats-${animationKey}`} className="grid grid-cols-2 gap-4 mt-6 animate-fade-in-4">
               <div className="glass-card rounded-[24px] flex flex-col items-center justify-center p-4">
                 <span className="text-[34px] font-semibold">5</span>
                 <p className="text-center text-regular leading-[16px]">

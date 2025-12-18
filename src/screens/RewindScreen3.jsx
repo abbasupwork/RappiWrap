@@ -1,29 +1,60 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import ArrowUp from "../assets/images/arrow-up.png";
 import Burger from "../assets/images/burger-icon.svg";
 
-const RewindScreen3 = ({ pageNumber, totalPages }) => {
+const RewindScreen3 = ({ pageNumber, totalPages, isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+      // Reset counter and animate from 0 to 87
+      setCount(0);
+      const duration = 2000; // 2 seconds
+      const target = 87;
+      const steps = 60; // Number of animation steps
+      const increment = target / steps;
+      const stepDuration = duration / steps;
+
+      let currentStep = 0;
+      const counter = setInterval(() => {
+        currentStep++;
+        if (currentStep >= steps) {
+          setCount(target);
+          clearInterval(counter);
+        } else {
+          setCount(Math.min(Math.floor(increment * currentStep), target));
+        }
+      }, stepDuration);
+
+      return () => clearInterval(counter);
+    } else {
+      setCount(0);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-3 py-5">
         <div className="w-full">
           <div className="px-6">
-            <img src={moustache} alt="" className="mb-2 mx-auto" />
-            <h2 className="font-golos font-bold text-[50px] leading-[50px] text-black mb-4">
+            <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-2 mx-auto animate-fade-in-1" />
+            <h2 key={`title-${animationKey}`} className="font-golos font-bold text-[50px] leading-[50px] text-black mb-4 animate-fade-in-2">
               Tus pedidos de este año
             </h2>
           </div>
-          <div className="bg-[url('./assets/images/map-bg.png')] h-[200px] bg-cover bg-center bg-no-repeat text-white p-6">
+          <div key={`map-${animationKey}`} className="bg-[url('./assets/images/map-bg.png')] h-[200px] bg-cover bg-center bg-no-repeat text-white p-6 animate-fade-in-3">
             <span className="font-semibold text-[24px] leading-[30px]">
               En 2025 hiciste
             </span>
             <h2 className="font-bold text-[50px] leading-[36px] mb-4 mt-2">
-              87 pedidos
+              {count} pedidos
             </h2>
             <p className="mb-10 text-xl ">que ayudaron a mover Bogotá</p>
           </div>
-          <div className="glass-card p-4 rounded-[34px] mx-6 mt-[-35px] mb-4 flex flex-col items-start">
+          <div key={`position-${animationKey}`} className="glass-card p-4 rounded-[34px] mx-6 mt-[-35px] mb-4 flex flex-col items-start animate-fade-in-4">
             <h4 className="text-[30px] font-medium mb-1">Tu posición</h4>
             <div className="bg-[#CB32DC] px-3 py-2 rounded-full relative overflow-hidden mb-2">
               <div
@@ -41,7 +72,7 @@ const RewindScreen3 = ({ pageNumber, totalPages }) => {
             </div>
             <p className="text-xl">de los que piden lo mismo en tú ciudad.</p>
           </div>
-          <div className="glass-card p-4 rounded-[34px] mx-6">
+          <div key={`category-${animationKey}`} className="glass-card p-4 rounded-[34px] mx-6 animate-fade-in-5">
             <p className="text-md">Tu categoría dominante:</p>
             <h4 className="text-[30px] font-medium mb-2">Restaurantes</h4>
             <div className="flex items-start w-full">

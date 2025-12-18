@@ -181,6 +181,7 @@ const SwipeableRewindContainer = () => {
             const props = {
               onSwipeUp: handleSwipeUp,
               currentScreenIndex: index,
+              isActive: currentScreen === index,
             };
 
             // Add screenNumber, pageNumber, and totalPages props

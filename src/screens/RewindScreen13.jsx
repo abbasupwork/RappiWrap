@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import BaseRewindScreen from "../components/BaseRewindScreen";
 import moustache from "../assets/images/moustache.svg";
 import Girl1 from "../assets/images/girl1.svg";
@@ -9,7 +10,14 @@ import Motorcycle from "../assets/images/motorcycle.svg";
 import confetti from "../assets/lotties/CONFETTI.json";
 import Lottie from "lottie-react";
 
-const RewindScreen5 = () => {
+const RewindScreen5 = ({ isActive }) => {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (isActive) {
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [isActive]);
   return (
     <>
       <BaseRewindScreen className="rewind-screen-3">
@@ -19,15 +27,15 @@ const RewindScreen5 = () => {
           className="absolute top-0 left-0"
         />
         <div className="w-full h-full bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] py-5 px-6">
-          <div className="flex justify-between items-start mb-4">
+          <div key={`header-${animationKey}`} className="flex justify-between items-start mb-4 animate-fade-in-1">
             <h3 className="text-[28px] font-bold leading-[30px] text-white">
-              El efecto<br></br>“María Camila”
+              El efecto<br></br>"María Camila"
             </h3>
             <img src={moustache} alt="" />
           </div>
           <div className="w-full flex flex-col justify-center">
-            <img className="w-[224px] mx-auto" src={Girl1} alt="" />
-            <div className="bg-white rounded-[24px] flex flex-col items-center p-4 mt-[-50px] mb-5">
+            <img key={`girl-${animationKey}`} className="w-[224px] mx-auto animate-fade-in-2" src={Girl1} alt="" />
+            <div key={`card-${animationKey}`} className="bg-white rounded-[24px] flex flex-col items-center p-4 mt-[-50px] mb-5 animate-fade-in-3">
               <h4 className="text-[24px] leading-[20px] text-[#D9682F] font-semibold mb-4">
                 Compradora de impacto
               </h4>
@@ -43,7 +51,7 @@ const RewindScreen5 = () => {
                 </h4>
               </div>
             </div>
-            <div className="flex flex-col gap-3 mb-4">
+            <div key={`stats-${animationKey}`} className="flex flex-col gap-3 mb-4 animate-fade-in-4">
               <div className="flex items-center gap-4 text-white">
                 <img src={Bag} alt="" />
                 <div>
