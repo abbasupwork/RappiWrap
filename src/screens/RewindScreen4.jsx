@@ -27,14 +27,28 @@ const RewindScreen4 = ({ pageNumber, totalPages, isActive }) => {
       <BaseRewindScreen className="rewind-screen-4 py-5">
         <div className="w-full">
           <div className="px-6 mb-5">
-            <img key={`moustache-${animationKey}`} src={moustache} alt="" className="mb-5 mx-auto animate-fade-in-1" />
-            <h3 key={`title1-${animationKey}`} className="font-bold text-[38px] leading-[32px] text-black mb-10 animate-fade-in-2">
+            <img
+              key={`moustache-${animationKey}`}
+              src={moustache}
+              alt=""
+              className="mb-5 mx-auto animate-fade-in-1"
+            />
+            <h3
+              key={`title1-${animationKey}`}
+              className="font-bold text-[38px] leading-[32px] text-black mb-10 animate-fade-in-2"
+            >
               Este año<br></br>agregamos
             </h3>
-            <h1 key={`title2-${animationKey}`} className="text-[80px] leading-[74px] font-bold bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2 animate-fade-in-3">
+            <h1
+              key={`title2-${animationKey}`}
+              className="text-[80px] leading-[74px] font-bold bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2 animate-fade-in-3"
+            >
               cientos
             </h1>
-            <h2 key={`title3-${animationKey}`} className="font-bold text-[50px] leading-[48px] bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2 animate-fade-in-4">
+            <h2
+              key={`title3-${animationKey}`}
+              className="font-bold text-[50px] leading-[48px] bg-gradient-to-b from-[#FF402D] to-[#FF3335] bg-clip-text text-transparent mb-2 animate-fade-in-4"
+            >
               de nuevos restaurantes<br></br>
               <span className="text-black">en tu ciudad</span>
             </h2>
@@ -42,7 +56,10 @@ const RewindScreen4 = ({ pageNumber, totalPages, isActive }) => {
           <div key={`carousel-${animationKey}`} className="animate-fade-in-5">
             <ImageCarousel slides={slidesData} />
           </div>
-          <div key={`footer-${animationKey}`} className="mt-10 px-6 animate-fade-in-6">
+          <div
+            key={`footer-${animationKey}`}
+            className="mt-10 px-6 animate-fade-in-6"
+          >
             <p className="text-[30px] leading-[30px]">
               Para que siempre encuentres algo rico y te antojes.
             </p>
