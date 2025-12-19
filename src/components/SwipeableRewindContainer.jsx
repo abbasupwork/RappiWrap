@@ -164,33 +164,33 @@ const SwipeableRewindContainer = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const body = document.body;
-  //   const html = document.documentElement;
-
-  //   body.style.overflow = "hidden";
-  //   body.style.overscrollBehavior = "none";
-  //   html.style.overflow = "hidden";
-
-  //   return () => {
-  //     body.style.overflow = "";
-  //     body.style.overscrollBehavior = "";
-  //     html.style.overflow = "";
-  //   };
-  // }, []);
-
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    const body = document.body;
+    const html = document.documentElement;
 
-    el.addEventListener("touchmove", (e) => e.preventDefault(), {
-      passive: false,
-    });
+    body.style.overflow = "hidden";
+    body.style.overscrollBehavior = "none";
+    html.style.overflow = "hidden";
 
     return () => {
-      el.removeEventListener("touchmove", (e) => e.preventDefault());
+      body.style.overflow = "";
+      body.style.overscrollBehavior = "";
+      html.style.overflow = "";
     };
   }, []);
+
+  // useEffect(() => {
+  //   const el = containerRef.current;
+  //   if (!el) return;
+
+  //   el.addEventListener("touchmove", (e) => e.preventDefault(), {
+  //     passive: false,
+  //   });
+
+  //   return () => {
+  //     el.removeEventListener("touchmove", (e) => e.preventDefault());
+  //   };
+  // }, []);
 
   return (
     <>
