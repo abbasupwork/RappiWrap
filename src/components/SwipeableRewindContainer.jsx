@@ -130,30 +130,30 @@ const TOTAL_SCREENS = REWIND_SCREENS.length;
 
 const SwipeableRewindContainer = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const touchStartY = useRef(null);
+  const touchEndY = useRef(null);
   const containerRef = useRef(null);
 
   const handleTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientY);
+    touchEndY.current = null;
+    touchStartY.current = e.touches[0].clientY;
   };
 
   const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientY);
+    touchEndY.current = e.touches[0].clientY;
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (touchStartY.current === null || touchEndY.current === null) return;
 
-    const distance = touchStart - touchEnd;
-    const isUpSwipe = distance > MIN_SWIPE_DISTANCE;
-    const isDownSwipe = distance < -MIN_SWIPE_DISTANCE;
+    const distance = touchStartY.current - touchEndY.current;
 
-    if (isUpSwipe && currentScreen < TOTAL_SCREENS - 1) {
-      setCurrentScreen(currentScreen + 1);
-    } else if (isDownSwipe && currentScreen > 0) {
-      setCurrentScreen(currentScreen - 1);
+    if (distance > MIN_SWIPE_DISTANCE && currentScreen < TOTAL_SCREENS - 1) {
+      // Swipe UP
+      setCurrentScreen((prev) => prev + 1);
+    } else if (distance < -MIN_SWIPE_DISTANCE && currentScreen > 0) {
+      // Swipe DOWN
+      setCurrentScreen((prev) => prev - 1);
     }
   };
 

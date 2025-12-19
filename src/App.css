@@ -26,6 +26,13 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(14px) saturate(180%) brightness(110%);
@@ -188,9 +195,10 @@
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   z-index: 9999;
+  touch-action: pan-y;
+  overscroll-behavior: none;
 }
 
 .screen-wrapper {
