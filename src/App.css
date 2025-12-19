@@ -191,6 +191,9 @@
   height: 100vh;
   overflow: hidden;
   z-index: 9999;
+  /* ✅ ANDROID FIX */
+  touch-action: pan-y;
+  overscroll-behavior: none;
 }
 
 .screen-wrapper {
@@ -354,7 +357,7 @@
 }
 
 .animate-fade-in-5 {
-  animation: fade-in 0.7s ease-out 1.0s both;
+  animation: fade-in 0.7s ease-out 1s both;
 }
 
 .animate-fade-in-6 {
