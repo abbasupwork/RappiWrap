@@ -189,9 +189,9 @@
   bottom: 0;
   width: 100vw;
   z-index: 9999;
-  touch-action: pan-y;
+  /* touch-action: pan-y;
   overscroll-behavior: none;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: none; */
 }
 
 .screen-wrapper {
