@@ -52,7 +52,7 @@ const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
             </div>
             <div
               key={`card-${animationKey}`}
-              className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] px-6 py-10 w-full h-full animate-fade-in-6"
+              className="bg-gradient-to-br from-[#FF7A4D] via-[#FF2526] to-[#FF4583] px-6 py-10 w-full animate-fade-in-6"
             >
               <div className="rounded-[24px] px-6 pb-8 shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] glass-card2 text-white text-center">
                 <img src={HeartIcon} alt="" className="mx-auto" />
