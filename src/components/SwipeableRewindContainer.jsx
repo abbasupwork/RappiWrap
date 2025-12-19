@@ -179,18 +179,18 @@ const SwipeableRewindContainer = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const el = containerRef.current;
-  //   if (!el) return;
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
 
-  //   el.addEventListener("touchmove", (e) => e.preventDefault(), {
-  //     passive: false,
-  //   });
+    el.addEventListener("touchmove", (e) => e.preventDefault(), {
+      passive: false,
+    });
 
-  //   return () => {
-  //     el.removeEventListener("touchmove", (e) => e.preventDefault());
-  //   };
-  // }, []);
+    return () => {
+      el.removeEventListener("touchmove", (e) => e.preventDefault());
+    };
+  }, []);
 
   return (
     <>
