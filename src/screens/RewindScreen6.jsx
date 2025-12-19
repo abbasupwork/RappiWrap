@@ -16,7 +16,7 @@ const RewindScreen5 = ({ pageNumber, totalPages, isActive }) => {
     <>
       <BaseRewindScreen className="rewind-screen-6">
         <div className="overflow-y-auto pt-8">
-          <div className="w-full">
+          <div className="w-full h-full">
             <div className="px-6 mb-10">
               <img
                 key={`moustache-${animationKey}`}

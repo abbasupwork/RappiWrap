@@ -15,7 +15,7 @@ const HomeScreen = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-white pb-20">
-        <div className="flex-1 px-6 pt-16">
+        <div className="flex-1 px-6 pt-10">
           <Header />
           <SearchBar />
           <PromotionalBanner />

@@ -10,7 +10,7 @@
 /* Page Indicator */
 .page-indicator {
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%) !important;
   display: flex;
