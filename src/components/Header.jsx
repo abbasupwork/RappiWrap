@@ -1,4 +1,4 @@
-import ExpandArrow from "../assets/images/expand.png";
+import ExpandArrow from "../assets/images/expand.svg";
 
 const Header = () => {
   return (
