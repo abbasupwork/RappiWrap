@@ -171,6 +171,7 @@ const SwipeableRewindContainer = () => {
     body.style.overflow = "hidden";
     body.style.overscrollBehavior = "none";
     html.style.overflow = "hidden";
+    html.style.overscrollBehavior = "none";
 
     return () => {
       body.style.overflow = "";
