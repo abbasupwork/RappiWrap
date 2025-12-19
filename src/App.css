@@ -191,9 +191,6 @@
   height: 100vh;
   overflow: hidden;
   z-index: 9999;
-  /* ✅ ANDROID FIX */
-  touch-action: pan-y;
-  overscroll-behavior: none;
 }
 
 .screen-wrapper {
