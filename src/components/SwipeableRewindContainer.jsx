@@ -140,6 +140,7 @@ const SwipeableRewindContainer = () => {
   };
 
   const handleTouchMove = (e) => {
+    e.preventDefault();
     touchEndY.current = e.touches[0].clientY;
   };
 
@@ -175,6 +176,19 @@ const SwipeableRewindContainer = () => {
       body.style.overflow = "";
       body.style.overscrollBehavior = "";
       html.style.overflow = "";
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    el.addEventListener("touchmove", (e) => e.preventDefault(), {
+      passive: false,
+    });
+
+    return () => {
+      el.removeEventListener("touchmove", (e) => e.preventDefault());
     };
   }, []);
 
