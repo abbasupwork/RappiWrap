@@ -208,7 +208,6 @@
   height: 100vh;
   flex-shrink: 0;
   position: relative;
-  overflow: hidden;
 }
 
 /* Rewind Intro Screen Animations */
