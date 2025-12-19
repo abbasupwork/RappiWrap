@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 
 import inicioIcon from "../assets/images/home.svg";
-import ofertasIcon from "../assets/images/Ofertas.svg";
+import ofertasIcon from "../assets/images/ofertas.svg";
 import favoritosIcon from "../assets/images/Favoritos.svg";
 import cuentaIcon from "../assets/images/quenta.svg";
 
