@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import RewindIntroScreen from "../screens/RewindIntroScreen";
 import RewindScreen from "../screens/RewindScreen";
 import RewindScreen1 from "../screens/RewindScreen1";
@@ -162,6 +162,21 @@ const SwipeableRewindContainer = () => {
       setCurrentScreen(currentScreen + 1);
     }
   };
+
+  useEffect(() => {
+    const body = document.body;
+    const html = document.documentElement;
+
+    body.style.overflow = "hidden";
+    body.style.overscrollBehavior = "none";
+    html.style.overflow = "hidden";
+
+    return () => {
+      body.style.overflow = "";
+      body.style.overscrollBehavior = "";
+      html.style.overflow = "";
+    };
+  }, []);
 
   return (
     <>
