@@ -140,7 +140,7 @@ const SwipeableRewindContainer = () => {
   };
 
   const handleTouchMove = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     touchEndY.current = e.touches[0].clientY;
   };
 
