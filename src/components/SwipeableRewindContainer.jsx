@@ -164,20 +164,20 @@ const SwipeableRewindContainer = () => {
     }
   };
 
-  useEffect(() => {
-    const body = document.body;
-    const html = document.documentElement;
+  // useEffect(() => {
+  //   const body = document.body;
+  //   const html = document.documentElement;
 
-    body.style.overflow = "hidden";
-    body.style.overscrollBehavior = "none";
-    html.style.overflow = "hidden";
+  //   body.style.overflow = "hidden";
+  //   body.style.overscrollBehavior = "none";
+  //   html.style.overflow = "hidden";
 
-    return () => {
-      body.style.overflow = "";
-      body.style.overscrollBehavior = "";
-      html.style.overflow = "";
-    };
-  }, []);
+  //   return () => {
+  //     body.style.overflow = "";
+  //     body.style.overscrollBehavior = "";
+  //     html.style.overflow = "";
+  //   };
+  // }, []);
 
   useEffect(() => {
     const el = containerRef.current;
